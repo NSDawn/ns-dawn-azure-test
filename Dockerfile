@@ -1,5 +1,6 @@
 FROM oven/bun:latest
 COPY . .
-EXPOSE 80
+ENV PORT=80
+EXPOSE $PORT
 RUN bun install --production
 ENTRYPOINT ["bun", "run", "dev"]
